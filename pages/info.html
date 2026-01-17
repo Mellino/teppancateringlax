@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information</title>
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/info.css" />
+  <script src=".../js/app.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <div class="logo">Julio's Teppan Catering</div>
+
+    <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="setup.html">Popular Setups</a></li>
+        <li><a class="active" data-translate="Contact" href="info.html">Information</a></li>
+        <li><a href="../employee/login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="info-wrap">
+    <!-- HERO (full-width, no empty giant panel) -->
+    <section class="info-hero">
+      <div class="hero-top">
+        <span class="hero-pill">Events • Booking • Fees • Contact</span>
+      </div>
+
+      <h1 data-translate="heading">Information about Events</h1>
+
+      <p class="hero-sub" data-translate="minimum_requirement">
+        We have a minimum requirement of 15 people per event.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn-primary contact-link" href="#contact">Contact</a>
+      </div>
+    </section>
+
+    <!-- MAIN GRID -->
+    <section class="info-grid">
+      <article class="info-card" id="events">
+        <h2 class="card-title" data-translate="heading">Information about Events</h2>
+        <ul class="card-list">
+          <li data-translate="minimum_requirement">We have a minimum requirement of 15 people per event.</li>
+          <li data-translate="additional_chef">When the number of people exceeds 30, another chef is required (No Additional Cost).</li>
+          <li data-translate="remaining_balance">The remaining balance must be paid in cash on the day of the event.</li>
+        </ul>
+
+        <div class="alert" data-translate="no_tables_chairs">
+          PLEASE NOTE : WE DO NOT PROVIDE TABLES OR CHAIRS FOR YOUR GUESTS
+        </div>
+      </article>
+
+      <article class="info-card" id="additional-fee">
+        <h2 class="card-title" data-translate="heading4">Additional Fees</h2>
+        <ul class="card-list">
+          <li data-translate="travel_fee">A $100 travel fee will be automatically added for locations more than 25 miles from Monrovia CA.</li>
+          <li data-translate="late_fee">A $100 late fee will be charged for guests arriving over an hour late.</li>
+        </ul>
+      </article>
+
+      <article class="info-card" id="how-to-book">
+        <h2 class="card-title" data-translate="heading2">How to Book an Event</h2>
+        <ul class="card-list">
+          <li>
+            <span data-translate="check_date">
+              To see if your date is available, please
+              <a href="#contact" class="contact-link">contact us</a>
+              or use the tool we have on the
+              <a href="availability.html" class="contact-link">website</a>.
+            </span>
+          </li>
+
+          <li data-translate="non_refundable_deposit">
+            We require a $200 <strong class="highlight">NON-REFUNDABLE</strong> deposit to secure your date (this amount will be applied to your total).
+          </li>
+
+          <li data-translate="zelle_instructions">
+            Once you are ready, you can send the deposit through Zelle using this number:
+            <br><strong>(626-205-4438)</strong> under the name <strong>Melvin G</strong>.
+          </li>
+        </ul>
+      </article>
+
+      <article class="info-card" id="contact">
+        <h2 class="card-title" data-translate="heading3">Contact Information</h2>
+
+        <div class="contact-grid">
+          <div class="contact-box">
+            <div class="contact-label">English</div>
+            <div class="contact-value" data-translate="contact_english">
+              To contact us in English, please text or call <br><strong>626-205-4438</strong><br/>
+            </div>
+            <div class="contact-actions">
+              <a class="mini-btn" href="tel:6262054438">Call</a>
+              <button class="mini-btn ghost" type="button" data-copy="6262054438">Copy</button>
+            </div>
+          </div>
+
+          <div class="contact-box">
+            <div class="contact-label">Spanish</div>
+            <div class="contact-value" data-translate="contact_spanish">
+              To contact us in Spanish, please text or call <br><strong>626-536-2401</strong><br/>
+            </div>
+            <div class="contact-actions">
+              <a class="mini-btn" href="tel:6265362401">Call</a>
+              <button class="mini-btn ghost" type="button" data-copy="6265362401">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ig-row">
+          <span data-translate="instagram">
+            Follow us on Instagram:
+            <a class="ig-link" href="https://www.instagram.com/teppancateringlax" target="_blank" rel="noopener">TeppanCateringLax</a>
+          </span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Julio's Teppan Catering. All rights reserved.</p>
+  </footer>
+
+ 
+</body>
+</html>

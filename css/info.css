@@ -1,0 +1,227 @@
+/* ==============================
+   INFO PAGE — clean + balanced
+   Uses base.css theme variables
+============================== */
+
+.info-wrap{
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  padding: 18px 12px 70px;
+}
+
+/* HERO */
+.info-hero{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 18px 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin: 0 auto 14px;
+  text-align: center;
+}
+
+.hero-top{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.hero-pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(241,245,249,.78);
+  font-weight: 950;
+  font-size: 12px;
+}
+
+.info-hero h1{
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 950;
+  letter-spacing: .2px;
+}
+
+.hero-sub{
+  margin: 0 auto 12px;
+  max-width: 62ch;
+  color: rgba(241,245,249,.80);
+  font-weight: 800;
+}
+
+.hero-actions{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-ghost{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-weight: 950;
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.btn-primary{
+  color: #0b1220;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  border-color: rgba(255,255,255,.18);
+  box-shadow: 0 10px 18px rgba(0,0,0,.25);
+}
+
+.btn-ghost{
+  background: rgba(255,255,255,.06);
+  color: rgba(241,245,249,.92);
+}
+.btn-ghost:hover{ background: rgba(255,255,255,.09); }
+
+/* GRID */
+.info-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* cards */
+.info-card{
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.card-title{
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 950;
+  letter-spacing: .15px;
+}
+
+.card-list{
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  color: rgba(241,245,249,.82);
+  font-weight: 800;
+  line-height: 1.55;
+}
+
+.alert{
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  font-weight: 950;
+  color: rgba(241,245,249,.95);
+  background: rgba(239,68,68,.12);
+  border: 1px solid rgba(239,68,68,.25);
+}
+
+/* links */
+.contact-link{
+  color: rgba(241,245,249,.95);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.highlight{
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 950;
+  background: rgba(236,72,153,.14);
+  border: 1px solid rgba(236,72,153,.22);
+}
+
+/* contact cards */
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.contact-box{
+  border-radius: 18px;
+  padding: 12px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.contact-label{
+  font-size: 12px;
+  font-weight: 950;
+  color: rgba(241,245,249,.70);
+  margin-bottom: 8px;
+}
+
+.contact-value{
+  color: rgba(241,245,249,.90);
+  font-weight: 850;
+}
+
+.contact-actions{
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mini-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  font-weight: 950;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(241,245,249,.92);
+  cursor: pointer;
+}
+
+.mini-btn:hover{ background: rgba(255,255,255,.09); }
+
+.mini-btn.ghost{
+  background: rgba(255,255,255,.03);
+}
+
+/* instagram row */
+.ig-row{
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: rgba(241,245,249,.82);
+  font-weight: 900;
+}
+
+.ig-link{
+  color: rgba(241,245,249,.95);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 950;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .info-grid{ grid-template-columns: 1fr; }
+  .contact-grid{ grid-template-columns: 1fr; }
+  .info-hero h1{ font-size: 24px; }
+}

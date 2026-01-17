@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>POS | Employee</title>
+
+  <!-- your global theme/navbar -->
+  <link rel="stylesheet" href="../css/base.css" />
+  <!-- POS page only -->
+  <link rel="stylesheet" href="../css/pos.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">Julio's Teppan Catering</div>
+
+    <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="setup.html">Popular Setups</a></li>
+        <li><a href="info.html">Information</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pos-page">
+    <section class="pos-shell">
+      <div class="pos-top">
+        <div class="pos-title-wrap">
+          <div class="pos-badge">Employee • POS</div>
+          <h1 class="pos-title">Point of Sale</h1>
+          <p class="pos-sub">Tap an item → choose quantity (Custom Plate lets you enter price first).</p>
+        </div>
+
+        <div class="pos-actions">
+          <button id="btnClear" class="btn-danger" type="button">Clear Order</button>
+        </div>
+      </div>
+
+      <div class="pos-grid">
+        <!-- MENU -->
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Menu</h2>
+            <div class="panel-hint">Tap to add</div>
+          </div>
+
+          <div id="menuGrid" class="menu-grid"></div>
+        </section>
+
+        <!-- ORDER -->
+        <aside class="panel order">
+          <div class="panel-head">
+            <h2>Current Order</h2>
+            <div class="panel-hint">Swipe/scroll</div>
+          </div>
+
+          <div id="orderList" class="order-list"></div>
+
+          <div class="order-bottom">
+            <div class="total-row">
+              <span>Total</span>
+              <span id="totalAmount">$0.00</span>
+            </div>
+
+            <button id="btnCheckout" class="btn-primary" type="button">
+              Checkout (summary)
+            </button>
+
+            <div id="checkoutMsg" class="checkout-msg" aria-live="polite"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Add item">
+        <div class="modal-head">
+          <div>
+            <div id="modalTag" class="modal-tag">Add Item</div>
+            <div id="modalName" class="modal-title">Item</div>
+          </div>
+          <button id="modalClose" class="icon-btn" type="button" aria-label="Close">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Price input (only for Custom Plate) -->
+          <div id="priceRow" class="field" style="display:none;">
+            <label for="priceInput">Price</label>
+            <div class="input-wrap">
+              <span class="prefix">$</span>
+              <input id="priceInput" type="number" step="0.01" min="0" placeholder="Enter price" inputmode="decimal" />
+            </div>
+            <div class="help">Custom Plate requires a manual price.</div>
+          </div>
+
+          <!-- Qty input -->
+          <div class="field">
+            <label for="qtyInput">Quantity</label>
+            <div class="qty-wrap">
+              <button id="qtyMinus" class="qty-btn" type="button">−</button>
+              <input id="qtyInput" class="qty-input" type="number" min="1" value="1" inputmode="numeric" />
+              <button id="qtyPlus" class="qty-btn" type="button">+</button>
+            </div>
+          </div>
+
+          <div class="preview">
+            <div class="preview-row">
+              <span>Item Total</span>
+              <span id="itemTotal">$0.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button id="modalAdd" class="btn-primary" type="button">Add to Order</button>
+          <button id="modalCancel" class="btn-ghost" type="button">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../JS/pos.js"></script>
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navBar = document.querySelector(".nav-bar");
+    if (hamburger && navBar) {
+      hamburger.onclick = () => navBar.classList.toggle("active");
+      hamburger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          navBar.classList.toggle("active");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

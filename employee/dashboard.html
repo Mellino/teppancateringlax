@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Dashboard | Julio's Teppan Catering</title>
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Julio's Teppan Catering</div>
+
+    <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="setup.html">Popular Setups</a></li>
+        <li><a href="info.html">Information</a></li>
+        <li><a class="active" href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="dash-page">
+    <section class="dash-wrap">
+      <div class="dash-head">
+        <div class="badge">Employee</div>
+        <h1>Dashboard</h1>
+        <p class="sub">Choose a tool below to continue.</p>
+      </div>
+
+      <!-- DASHBOARD BUTTONS -->
+      <div class="dash-cards">
+
+        <a class="dash-card" href="soundboard.html">
+          <div class="icon">🔊</div>
+          <div class="title">Soundboard</div>
+          <div class="desc">Quick sounds for service / events.</div>
+          <div class="cta">Open</div>
+        </a>
+
+        <a class="dash-card" href="availability.html">
+          <div class="icon">📅</div>
+          <div class="title">Availability Calendar</div>
+          <div class="desc">View available and blocked dates.</div>
+          <div class="cta">Open</div>
+        </a>
+
+        <!-- NEW POS BUTTON -->
+        <a class="dash-card" href="pos.html">
+          <div class="icon">💳</div>
+          <div class="title">POS System</div>
+          <div class="desc">Manage payments and transactions.</div>
+          <div class="cta">Open</div>
+        </a>
+
+      </div>
+
+      <div class="dash-footer">
+
+
+        <button id="logoutBtn" class="logout-btn" type="button">
+          Log out
+        </button>
+      </div>
+
+      <div id="status" class="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="../JS/dashboard.js"></script>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navBar = document.querySelector(".nav-bar");
+    if (hamburger && navBar) {
+      hamburger.onclick = () => navBar.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+
+/* -----------------------------
+   Modern Refresh (No HTML/JS changes)
+   Keeps the same layout + responsiveness
+------------------------------ */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+:root{
+  /* Background */
+  --bg: #0b1220;                 /* deep navy / IG night vibe */
+
+  /* Panels & cards */
+  --panel: rgba(255,255,255,.06);
+  --panel-strong: rgba(255,255,255,.10);
+  --border: rgba(255,255,255,.12);
+
+  /* Text */
+  --text: #f1f5f9;               /* clean white */
+  --muted: rgba(241,245,249,.72);
+
+  /* Instagram-inspired accent */
+  --brand: #ec4899;              /* IG pink */
+  --brand-2: #f97316;            /* IG orange */
+
+  /* Effects */
+  --shadow: 0 18px 45px rgba(0,0,0,.38);
+  --shadow-soft: 0 10px 25px rgba(0,0,0,.28);
+  --radius: 18px;
+}
+
+
+
+
+body {
+    background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(125,211,252,.18), transparent 60%),
+        radial-gradient(1000px 500px at 90% 10%, rgba(167,139,250,.16), transparent 55%),
+        var(--bg);
+    font-family: "Sen", sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    padding: 0 1px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 80px;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0; 
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: var(--text);
+    padding-left: 20px;
+    text-transform: none;
+}
+
+
+/* Main Content */
+main {
+    padding: 44px 12px;
+}
+
+.section {
+    margin-bottom: 64px;
+}
+
+/* Headings */
+h1 {
+    color: var(--text);
+    margin: 18px 0 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    text-decoration: none; /* remove underline for modern look */
+    letter-spacing: 0.3px;
+}
+
+h1::after{
+    content:"";
+    display:block;
+    width: 88px;
+    height: 4px;
+    margin: 10px auto 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--brand), var(--brand-2));
+    opacity: .85;
+}
+
+/* Description boxes */
+.menu-description,
+.special-request,
+.plate-description {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 22px;
+    max-width: 860px;
+    text-align: center;
+    border-radius: var(--radius);
+    margin: 28px auto;
+    box-shadow: var(--shadow-soft);
+}
+
+/* Text styling */
+.menu-description p {
+    font-size: 1.06rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 8px 0;
+}
+
+.menu-description p strong{
+    font-weight: 800;
+}
+
+.plate-description{
+    padding: 26px;
+}
+
+.plate-description p{
+    color: rgba(229,231,235,.88);
+    line-height: 1.9;
+    font-weight: 500;
+    margin: 8px 0;
+}
+
+/* Menu Cards Container */
+.menu {
+    margin-top: 20px;
+}
+
+.menu-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* keep 2 columns */
+    gap: 18px;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 18px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Card */
+.card {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 12px 22px rgba(0,0,0,.25);
+    text-align: center;
+    font-size: 18px;
+    color: var(--text);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset: -80px;
+    background: radial-gradient(circle at 30% 30%, rgba(125,211,252,.25), transparent 45%),
+                radial-gradient(circle at 70% 70%, rgba(167,139,250,.22), transparent 50%);
+    opacity: .9;
+    pointer-events:none;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,.11);
+    box-shadow: 0 20px 45px rgba(0,0,0,.35);
+}
+
+/* Special Request (kept, but modern) */
+.special-request {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    margin-top: 30px;
+}
+
+.special-request p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(229,231,235,.85);
+}
+
+/* Color Sections Container */
+.colors {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* keep 5 columns desktop */
+    gap: 28px;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 22px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    justify-items: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+/* Color Box */
+.color-box {
+    width: 104px;
+    height: 92px;
+    border-radius: 16px;
+    text-align: center;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: .2px;
+    box-shadow: 0 10px 18px rgba(0,0,0,.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(255,255,255,.10);
+    position: relative;
+}
+
+.color-box::after{
+    content:"";
+    position:absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(180deg, rgba(255,255,255,.18), transparent 45%);
+    opacity: .8;
+    pointer-events:none;
+}
+
+.color-box:hover {
+    transform: scale(1.08);
+    box-shadow: 0 16px 28px rgba(0,0,0,.32);
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+    .menu-cards {
+        grid-template-columns: 1fr; /* keep your mobile behavior */
+        padding: 14px;
+    }
+
+    .colors {
+        grid-template-columns: repeat(3, 1fr); /* keep your behavior */
+        gap: 14px;
+        padding: 16px;
+        justify-content: center;
+    }
+
+    .color-box {
+        width: 92px;
+        height: 82px;
+        font-size: 14px;
+    }
+
+    h1{
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-cards {
+        grid-template-columns: 1fr;
+        max-width: 95%;
+        padding: 12px;
+    }
+
+    .card {
+        padding: 16px;
+        font-size: 18px;
+    }
+
+    .colors {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 18px;
+        justify-content: center;
+        padding: 14px;
+    }
+
+    .color-box {
+        width: 90px;
+        height: 80px;
+        font-size: 14px;
+    }
+}
+
+
+.btn-primary {
+    /* Color and Background */
+    background-color: #FF8C00; /* A vibrant orange */
+    color: white;              /* Text color */
+    
+    /* Shape and Sizing */
+    display: inline-block;
+    padding: 12px 28px;        /* Vertical and Horizontal spacing */
+    border-radius: 50px;       /* This makes the button round */
+    
+    /* Text Styling */
+    text-decoration: none;     /* Removes the underline */
+    font-weight: bold;
+    font-family: sans-serif;
+    
+    /* Smooth Transition for Hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect */
+.btn-primary:hover {
+    background-color: #e67e00; /* Darkens slightly when hovered */
+    transform: scale(1.05);    /* Makes it pop slightly */
+}

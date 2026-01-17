@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Availability</title>
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/availability.css" />
+
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Julio's Teppan Catering</div>
+    <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="/pages/menu.html">Menu</a></li>
+        <li><a href="/pages/setup.html">Popular Setups</a></li>
+        <li><a href="/pages/info.html">Information</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="avail-page">
+    <section class="avail-shell">
+      <div class="cal-head">
+        <button class="nav-btn" id="prevMonth" type="button" aria-label="Previous month">‹</button>
+        <div class="month-title" id="monthTitle">Month YYYY</div>
+        <button class="nav-btn" id="nextMonth" type="button" aria-label="Next month">›</button>
+      </div>
+
+      <div class="dow">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+
+      <div class="month-grid" id="monthGrid"></div>
+
+      <div class="cal-actions">
+        <button class="btn-ghost" id="btnToday" type="button">Go to Today</button>
+        <button class="btn-danger" id="btnClearMonth" type="button">Clear Month (Reset)</button>
+      </div>
+
+      <div class="db-row">
+        <span class="db-dot" id="dbDot"></span>
+        <span class="db-text" id="dbStatus">Connecting…</span>
+      </div>
+
+            <div class="legend">
+        <div class="legend-item">
+            <span class="swatch green"></span>
+            <span>Weekend default</span>
+        </div>
+        <div class="legend-item">
+            <span class="swatch yellow"></span>
+            <span>Weekday default</span>
+        </div>
+        <div class="legend-item">
+            <span class="swatch red"></span>
+            <span>Closed</span>
+        </div>
+        </div>
+
+        <div class="quick-row">
+        <button class="btn-ok" id="btnSetWeekendsGreen" type="button">Set Fri–Sun Green</button>
+        <button class="btn-warn" id="btnSetWeekdaysYellow" type="button">Reset Mon–Thu Default</button>
+        </div>
+
+    </section>
+  </main>
+
+  <script src="../JS/avail.js"></script>
+
+  <script>
+    // Hamburger menu toggle
+    const hamburger = document.querySelector(".hamburger");
+    const navBar = document.querySelector(".nav-bar");
+    if (hamburger && navBar) {
+      hamburger.onclick = () => navBar.classList.toggle("active");
+      hamburger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          navBar.classList.toggle("active");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

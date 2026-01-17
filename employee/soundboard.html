@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Soundboard | Employee</title>
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/soundboard.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">Julio's Teppan Catering</div>
+
+    <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="setup.html">Popular Setups</a></li>
+        <li><a href="info.html">Information</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="sb-page">
+    <section class="sb-shell">
+      <div class="sb-head">
+        <div class="sb-badge">Employee • Soundboard</div>
+        <h1 class="sb-title">Soundboard</h1>
+        <p class="sb-sub">Tap a pad to play. Tap STOP to kill audio.</p>
+      </div>
+
+      <!-- 2 columns x 3 rows (6 pads) -->
+      <div class="soundboard" aria-label="Soundboard pads">
+        <button class="pad" data-sound="../assets/sounds/sound1.wav">Effect 1</button>
+        <button class="pad" data-sound="../assets/sounds/sound2.wav">Effect 2</button>
+        <button class="pad" data-sound="../assets/sounds/sound3.mp3">Effect 3</button>
+        <button class="pad" data-sound="../assets/sounds/sound4.mp3">Effect 4</button>
+        <button class="pad" data-sound="../assets/sounds/sound5.mp3">Effect 5</button>
+        <button class="pad" data-sound="../assets/sounds/sound6.mp3">Effect 6</button>
+      </div>
+
+      <!-- STOP button (red) -->
+      <button id="stopBtn" class="stop-btn" type="button" aria-label="Stop audio">
+        ⛔ STOP
+      </button>
+
+      <div class="sb-footer">
+        <a class="sb-back" href="dashboard.html">← Back to Dashboard</a>
+        <div class="sb-note">Edit sound paths in each <code>data-sound</code>.</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../JS/soundboard.js"></script>
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navBar = document.querySelector(".nav-bar");
+    if (hamburger && navBar) {
+      hamburger.onclick = () => navBar.classList.toggle("active");
+      hamburger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          navBar.classList.toggle("active");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

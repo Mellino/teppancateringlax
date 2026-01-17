@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Julio's Teppan Catering</title>
+
+  <!-- Global theme/navbar -->
+  <link rel="stylesheet" href="../css/base.css" />
+  <!-- Page styles -->
+  <link rel="stylesheet" href="../css/login.css" />
+
+  <!-- Supabase JS (UMD build) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Julio's Teppan Catering</div>
+
+    <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="/pages/menu.html">Menu</a></li>
+        <li><a href="../pages/setup.html">Popular Setups</a></li>
+        <li><a href="/pages/info.html">Information</a></li>
+        <li><a class="active" href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="login-page">
+    <section class="login-shell">
+      <!-- Left panel -->
+      <div class="login-left">
+        <div class="brand-chip">
+          <span class="dot"></span>
+          Employee Portal
+        </div>
+
+        <h1>Welcome back</h1>
+        <p>
+          Sign in to manage schedules, requests, and internal tools for Julio’s Teppan Catering.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <div>
+              <div class="feature-title">Fast access</div>
+              <div class="feature-sub">Get to what you need quickly.</div>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🗓️</div>
+            <div>
+              <div class="feature-title">Tools & scheduling</div>
+              <div class="feature-sub">Stay organized and updated.</div>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🔒</div>
+            <div>
+              <div class="feature-title">Secure login</div>
+              <div class="feature-sub">Employee-only access.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-note">
+          Tip: Ask the manager to create your account if you don’t have one.
+        </div>
+      </div>
+
+      <!-- Right panel: login card -->
+      <div class="login-card">
+        <div class="card-top">
+          <div class="card-title">Sign in</div>
+          <div class="card-sub">Use your employee email + password</div>
+        </div>
+
+        <form class="form" id="loginForm" autocomplete="on">
+          <label class="field">
+            <span>Email</span>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="you@company.com"
+              required
+              autocomplete="email"
+            />
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <div class="password-wrap">
+              <input
+                id="password"
+                type="password"
+                name="password"
+                placeholder="••••••••"
+                required
+                autocomplete="current-password"
+              />
+              <button type="button" class="toggle-pass" id="togglePass">Show</button>
+            </div>
+          </label>
+
+          <div class="row">
+            <label class="check">
+              <input id="remember" type="checkbox" />
+              <span>Remember me</span>
+            </label>
+          </div>
+
+          <button class="primary" type="submit" id="loginBtn">Login</button>
+
+          <!-- Status -->
+          <div class="status" id="statusBox" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="../JS/login.js"></script>
+  <script>
+    // Hamburger toggle (safe)
+    const hamburger = document.querySelector(".hamburger");
+    const navBar = document.querySelector(".nav-bar");
+    if (hamburger && navBar) {
+      hamburger.onclick = () => navBar.classList.toggle("active");
+      hamburger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          navBar.classList.toggle("active");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
